@@ -20,7 +20,7 @@ const WelcomePage = () => {
           <Film className="w-28 h-28 text-white mx-auto animate-pulse" />
         </motion.div>
         <h1 className="text-4xl font-bold text-blue-600 underline text-center mt-10">
-  Tailwind is working 🎉
+ 
 </h1>
         {/* Header */}
         <h1 className="text-6xl font-extrabold tracking-wide text-center text-transparent bg-clip-text bg-gradient-to-r from-white to-red-300">

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getNowPlayingMovies } from "../api/omdb"; // or rename to tmdb for clarity
+import { getNowPlayingMovies } from "../api/omdb";
 import { useNavigate } from "react-router-dom";
 
 const Home = () => {
@@ -27,7 +27,8 @@ const Home = () => {
           {loading ? "Loading Movies..." : "Now Showing in Cinemas"}
         </h1>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+       
+        <div className="grid grid-cols-3 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {movies.map((movie) => (
             <div
               key={movie.id}
@@ -42,7 +43,10 @@ const Home = () => {
               <div className="p-4">
                 <h2 className="text-lg font-semibold truncate">{movie.title}</h2>
                 <p className="text-sm text-gray-400">{movie.year}</p>
-                <p className="text-xs text-gray-500 mt-1">{movie.genres.join(", ")}</p>
+               
+                <p className="text-xs text-gray-500 mt-1">
+                  {Array.isArray(movie.genres) ? movie.genres.join(", ") : movie.genres}
+                </p>
               </div>
             </div>
           ))}
